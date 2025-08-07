@@ -6,8 +6,8 @@ package org.utl.ldsm304.controlador;
 
 /**
  *
- * @author mag09
+ * @author uriel
  */
-public class Controlador {
+public class ControladorEjercicioDos {
     
 }
