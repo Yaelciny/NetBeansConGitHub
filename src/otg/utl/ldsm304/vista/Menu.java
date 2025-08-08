@@ -16,7 +16,8 @@ public class Menu {
     public static void mostrarMenuPrincipal(){
         Scanner leer = new Scanner(System.in);
         int opcion = 0;
-        do {            
+        do {      
+            System.out.println("");
             System.out.println("MENU PRINCIPAL");
             System.out.println("1. Ejercicio 1");
             System.out.println("2. Ejercicio 2");
@@ -48,10 +49,10 @@ public class Menu {
             {2, 5, 3, 7}
         };  
         ControladorEjercicioUno cu = new ControladorEjercicioUno();
-        
         char opcion = 'z';
-        System.out.println("");
-        do {            
+
+        do {       
+            System.out.println("");
             System.out.println("Menu Ejercicio 1");
             System.out.println("a. Talla que mas se repite");
             System.out.println("b. Tallas que son par");
@@ -98,10 +99,10 @@ public class Menu {
             {"osoide", "universo", "salsa"}
         };
         ControladorEjercicioDos ce2 = new ControladorEjercicioDos();
-
         char opcion = 'z';
-        System.out.println("");
+        
         do {
+            System.out.println("");
             System.out.println("Menu Ejercicio 2");
             System.out.println("a. Cadenas que comienzan con la letra 'o'");
             System.out.println("b. Cadenas que tienen las 5 vocales");
