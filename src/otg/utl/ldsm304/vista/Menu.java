@@ -6,15 +6,9 @@ package otg.utl.ldsm304.vista;
 
 import java.util.Scanner;
 import org.utl.ldsm304.controlador.ControladorEjercicioUno;
+import org.utl.ldsm304.controlador.ControladorEjercicioDos;
 
-/**
- *
- * @author mag09
- */
 public class Menu {
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         mostrarMenuPrincipal();
     }
@@ -44,7 +38,6 @@ public class Menu {
                     break;
             }
         } while (opcion != 0);
- 
     }
     
     public static void ejercicio1(Scanner leer){
@@ -98,26 +91,38 @@ public class Menu {
         } while (opcion != 'z');
     }
     
-    
     public static void ejercicio2(Scanner leer){
+        String[][] cadenas = {
+            {"oso", "casa", "murcielago"},
+            {"oruga", "salado", "queso"},
+            {"osoide", "universo", "salsa"}
+        };
+        ControladorEjercicioDos ce2 = new ControladorEjercicioDos();
+
         char opcion = 'z';
         System.out.println("");
-        do {            
+        do {
             System.out.println("Menu Ejercicio 2");
-            System.out.println("a. Cadenas que comienzan con la letra 'o' ");
-            System.out.println("b. Cadena que tenga las 5 vocales");
-            System.out.println("c.Cadena que tenga la silaba 'sa'");
-            System.out.println("z. salir");
+            System.out.println("a. Cadenas que comienzan con la letra 'o'");
+            System.out.println("b. Cadenas que tienen las 5 vocales");
+            System.out.println("c. Cadenas que contienen la silaba 'sa'");
+            System.out.println("z. Salir");
             opcion = leer.next().charAt(0);
-             switch (opcion) {
+            switch (opcion) {
                 case 'a':
-                    
+                    String[] conO = ce2.obtenerCadenasConO(cadenas);
+                    if (conO.length == 0) System.out.println("Sin resultados");
+                    for (String s : conO) System.out.println(s);
                     break;
                 case 'b':
-                    
+                    String[] conVocales = ce2.obtenerCadenasConTodasVocales(cadenas);
+                    if (conVocales.length == 0) System.out.println("Sin resultados");
+                    for (String s : conVocales) System.out.println(s);
                     break;
                 case 'c':
-                    
+                    String[] conSa = ce2.obtenerCadenasConSa(cadenas);
+                    if (conSa.length == 0) System.out.println("Sin resultados");
+                    for (String s : conSa) System.out.println(s);
                     break;  
                 case 'z': 
                     System.out.println("Saliendo del ejercicio 2");
