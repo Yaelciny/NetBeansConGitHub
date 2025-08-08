@@ -5,6 +5,7 @@
 package otg.utl.ldsm304.vista;
 
 import java.util.Scanner;
+import org.utl.ldsm304.controlador.ControladorEjercicioUno;
 
 /**
  *
@@ -47,7 +48,14 @@ public class Menu {
     }
     
     public static void ejercicio1(Scanner leer){
-        double[][] tallas = new double[4][4]; 
+        int[][] tallas = {
+            {5, 3, 5, 2},
+            {6, 5, 7, 8},
+            {5, 8, 9, 10},
+            {2, 5, 3, 7}
+        };  
+        ControladorEjercicioUno cu = new ControladorEjercicioUno();
+        
         char opcion = 'z';
         System.out.println("");
         do {            
@@ -61,19 +69,24 @@ public class Menu {
             opcion = leer.next().charAt(0);
             switch (opcion) {
                 case 'a':
-                    
+                    int masRepetido = cu.obtenerMasRepetido(tallas);
+                    System.out.println("La talla que mas se repite es: " + masRepetido);
                     break;
                 case 'b':
-                    
+                    int cantidadPares = cu.obtenerPares(tallas);
+                    System.out.println("Cantidad de tallas pares: " + cantidadPares);
                     break;
                 case 'c':
-                    
+                    int cantidadImpares = cu.obtenerImpares(tallas);
+                    System.out.println("Cantidad de tallas impares: " + cantidadImpares);
                     break;
                 case 'd':
-                    
+                    int sumaDiagonal = cu.obtenerSumaDiagonal(tallas);
+                    System.out.println("Suma de tallas en la diagonal: " + sumaDiagonal);
                     break;
                 case 'e':
-                    
+                    int multiplosDe5 = cu.obtenerMultiplosde5(tallas);
+                    System.out.println("Cantidad de tallas multiplos de 5: " + multiplosDe5);
                     break;    
                 case 'z': 
                     System.out.println("Saliendo del ejercicio 1");
